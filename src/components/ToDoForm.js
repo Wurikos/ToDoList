@@ -38,7 +38,7 @@ const ToDoForm = ({
 	} = useOverrides(props, overrides, defaultProps);
 	return <Box {...rest}>
 		<Input {...override("input")} value={userInput} type="text" onChange={handleChange} />
-		<Button {...override("button")} />
+		<Button {...override("button")} onClick={handleSubmit} />
 		{children}
 	</Box>;
 };
