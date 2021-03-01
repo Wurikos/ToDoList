@@ -110,6 +110,10 @@ const Wrapper = props => {
 		setToDoList(copy);
 	};
 
+	const deleteTask = e => {
+		e.prevent.default;
+	};
+
 	const {
 		override
 	} = useOverrides(props, overrides);
@@ -117,7 +121,7 @@ const Wrapper = props => {
 		      
 		<ToDoForm {...override("todoform")} addTask={addTask} />
 		      
-		<ToDoList {...override("todolist")} toDoList={toDoList} />
+		<ToDoList {...override("todolist")} toDoList={toDoList} deleteTask={deleteTask} />
 		    
 	</Box>;
 };

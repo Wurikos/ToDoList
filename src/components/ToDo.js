@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Link } from "@quarkly/widgets";
+import { Text, Link, Icon } from "@quarkly/widgets";
 import { useOverrides } from "@quarkly/components";
 import atomize from "@quarkly/atomize";
 const overrides = {
@@ -44,6 +44,12 @@ const overrides = {
 			"text-align": "center",
 			"margin": "10px 10px 10px 10px",
 			"font-size": "10px"
+		},
+		"icon": {
+			"kind": "Icon",
+			"props": {
+				"category": "BsFillXCircleFill"
+			}
 		}
 	}
 };
@@ -51,12 +57,9 @@ const Item = atomize.li();
 
 const ToDo = ({
 	todo,
+	deleteTask,
 	...props
 }) => {
-	const deleteTask = e => {
-		e.prevent.default;
-	};
-
 	const {
 		override,
 		children,
@@ -67,15 +70,15 @@ const ToDo = ({
 		<Item {...override("text", "todo" + todo.id)}>
 			  
         
-			<Link {...override("link1")}>
+			<Link {...override("link1")} onClick={deleteTask}>
 				Удалить
 			</Link>
 			        
-			<Link {...override("link2")}>
+			<Link {...override("link2")} onClick={deleteTask}>
 				Избранное
 			</Link>
 			        
-			<Link {...override("link3")}>
+			<Link {...override("link3")} onClick={deleteTask}>
 				Выполненно
 			</Link>
 			        
