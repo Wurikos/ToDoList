@@ -18,9 +18,12 @@ const overrides = {
 		"props": {
 			"text-transform": "uppercase",
 			"color": "--dark1",
+			"height": "10px",
+			"width": "10px",
 			"text-align": "center",
 			"margin": "10px 10px 10px 10px",
-			"font-size": "10px"
+			"font-size": "10px",
+			"background-image": "--IoIosArrowDropdownCircle"
 		}
 	},
 	"link2": {
@@ -50,6 +53,10 @@ const ToDo = ({
 	todo,
 	...props
 }) => {
+	const deleteTask = e => {
+		e.prevent.default;
+	};
+
 	const {
 		override,
 		children,

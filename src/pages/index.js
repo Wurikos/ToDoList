@@ -16,7 +16,7 @@ export default (() => {
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
 		<Components.Wrapper>
-			<Override slot="todolist" text-align="center" list-style-type="none">
+			<Override slot="todolist" text-align="left" list-style-type="none" padding="0px 0px 0px 0px">
 				<Override slot="todo">
 					<Override slot="todo1">
 						Give dog a bath{" "}
@@ -327,7 +327,7 @@ export default (() => {
 					<Override slot="link2">
 						Избранное
 					</Override>
-					<Override slot="link1">
+					<Override slot="link1" background="rgba(0, 0, 0, 0) url() 0% 0% /auto repeat scroll padding-box">
 						Удалить
 					</Override>
 					<Override slot="todo9">
