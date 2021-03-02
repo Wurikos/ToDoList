@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Link, Icon } from "@quarkly/widgets";
+import { Text, Link, Icon, Span } from "@quarkly/widgets";
 import { useOverrides } from "@quarkly/components";
 import atomize from "@quarkly/atomize";
 const overrides = {
@@ -50,6 +50,12 @@ const overrides = {
 			"props": {
 				"category": "BsFillXCircleFill"
 			}
+		},
+		"span:": {
+			"kind": "Span"
+		},
+		"strike": {
+			color: "green"
 		}
 	}
 };
@@ -58,8 +64,14 @@ const Item = atomize.li();
 const ToDo = ({
 	todo,
 	deleteTask,
+	handleToggle,
 	...props
 }) => {
+	const handleClick = e => {
+		e.preventDefault();
+		handleToggle(e.currentTarget.id);
+	};
+
 	const {
 		override,
 		children,
@@ -70,17 +82,25 @@ const ToDo = ({
 		<Item {...override("text", "todo" + todo.id)}>
 			  
         
-			{todo.task}
+			<Span
+				{...override("span")}
+				name="todo"
+				value={todo.id}
+				onClick={handleClick}
+				className={todo.complete ? "strike" : ""}
+			>
+				{todo.task}
+			</Span>
 			         
-			<Link {...override("link1")} onClick={deleteTask}>
+			<Link {...override("link1")}>
 				Удалить
 			</Link>
 			        
-			<Link {...override("link2")} onClick={deleteTask}>
+			<Link {...override("link2")}>
 				Избранное
 			</Link>
 			        
-			<Link {...override("link3")} onClick={deleteTask}>
+			<Link {...override("link3")}>
 				Выполненно
 			</Link>
 			      

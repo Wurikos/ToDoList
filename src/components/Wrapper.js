@@ -99,6 +99,7 @@ const data = [{
 
 const Wrapper = props => {
 	const [toDoList, setToDoList] = useState(data);
+	/*const [succes, setSucces] = useState(false);*/
 
 	const addTask = userInput => {
 		let copy = [...toDoList];
@@ -108,6 +109,16 @@ const Wrapper = props => {
 			complete: false
 		}];
 		setToDoList(copy);
+	};
+
+	const handleToggle = id => {
+		let mapped = toDoList.map(task => {
+			return task.id == id ? { ...task,
+				complete: !task.complete
+			} : { ...task
+			};
+		});
+		setToDoList(mapped);
 	};
 
 	const deleteTask = e => {
@@ -132,7 +143,7 @@ const Wrapper = props => {
 		      
 		<ToDoForm {...override("todoform")} addTask={addTask} />
 		      
-		<ToDoList {...override("todolist")} toDoList={toDoList} deleteTask={deleteTask} />
+		<ToDoList {...override("todolist")} toDoList={toDoList} deleteTask={deleteTask} handleToggle={handleToggle} />
 		    
 	</Box>;
 };

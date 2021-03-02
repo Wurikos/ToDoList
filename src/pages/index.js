@@ -1,6 +1,6 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link } from "@quarkly/widgets";
+import { Theme, Link, Span } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
 import { Override } from "@quarkly/components";
@@ -22,12 +22,26 @@ export default (() => {
 						Give dog a bath{" "}
 					</Override>
 					<Override slot="todo2">
+						<Span
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
+							Do laundry
+						</Span>
 						<Link
 							text-transform="uppercase"
 							color="--dark1"
+							height="10px"
+							width="10px"
 							text-align="center"
 							margin="10px 10px 10px 10px"
 							font-size="10px"
+							background-image="--IoIosArrowDropdownCircle"
+							background="rgba(0, 0, 0, 0) url() 0% 0% /auto repeat scroll padding-box"
 							data-qkind="Link"
 							overflow-wrap="normal"
 							word-break="normal"
@@ -36,7 +50,7 @@ export default (() => {
 							text-overflow="clip"
 							hyphens="manual"
 						>
-							Удалить
+							<div />
 						</Link>
 						<Link
 							text-transform="uppercase"
@@ -70,7 +84,6 @@ export default (() => {
 						>
 							Выполненно
 						</Link>
-						Do laundry
 					</Override>
 					<Override slot="todo3">
 						Vacuum floor{" "}
@@ -174,12 +187,26 @@ export default (() => {
 						Выполненно
 					</Override>
 					<Override slot="todo8">
+						<Span
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
+							Change linens
+						</Span>
 						<Link
 							text-transform="uppercase"
 							color="--dark1"
+							height="10px"
+							width="10px"
 							text-align="center"
 							margin="10px 10px 10px 10px"
 							font-size="10px"
+							background-image="--IoIosArrowDropdownCircle"
+							background="rgba(0, 0, 0, 0) url() 0% 0% /auto repeat scroll padding-box"
 							data-qkind="Link"
 							overflow-wrap="normal"
 							word-break="normal"
@@ -222,7 +249,6 @@ export default (() => {
 						>
 							Выполненно
 						</Link>
-						Change linens
 					</Override>
 					<Override slot="todo10">
 						<Link
@@ -328,15 +354,29 @@ export default (() => {
 						Избранное
 					</Override>
 					<Override slot="link1" background="rgba(0, 0, 0, 0) url() 0% 0% /auto repeat scroll padding-box">
-						Удалить
+						<div />
 					</Override>
 					<Override slot="todo9">
+						<Span
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
+							Rake leaves
+						</Span>
 						<Link
 							text-transform="uppercase"
 							color="--dark1"
+							height="10px"
+							width="10px"
 							text-align="center"
 							margin="10px 10px 10px 10px"
 							font-size="10px"
+							background-image="--IoIosArrowDropdownCircle"
+							background="rgba(0, 0, 0, 0) url() 0% 0% /auto repeat scroll padding-box"
 							data-qkind="Link"
 							overflow-wrap="normal"
 							word-break="normal"
@@ -379,7 +419,6 @@ export default (() => {
 						>
 							Выполненно
 						</Link>
-						Rake leaves
 					</Override>
 					<Override slot="todo11">
 						<Link

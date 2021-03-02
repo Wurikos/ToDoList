@@ -13,6 +13,7 @@ const List = atomize.ul();
 const ToDoList = ({
 	toDoList,
 	deleteTask,
+	handleToggle,
 	...props
 }) => {
 	const {
@@ -21,7 +22,13 @@ const ToDoList = ({
 	} = useOverrides(props, overrides);
 	return <List {...rest}>
 		      
-		{toDoList.map(todo => <ToDo key={todo.id} {...override("todo", "todo" + todo.id)} todo={todo} deleteTask={deleteTask} />)}
+		{toDoList.map(todo => <ToDo
+			key={todo.id}
+			{...override("todo", "todo" + todo.id)}
+			todo={todo}
+			deleteTask={deleteTask}
+			handleToggle={handleToggle}
+		/>)}
 		    
 	</List>;
 };
