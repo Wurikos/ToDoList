@@ -111,7 +111,18 @@ const Wrapper = props => {
 	};
 
 	const deleteTask = e => {
-		e.prevent.default;
+		e.prevent.default();
+		console.log("Работает");
+	};
+
+	const doneTask = e => {
+		e.prevent.default();
+		console.log("Работает");
+	};
+
+	const importantTask = e => {
+		e.prevent.default();
+		console.log("Работает");
 	};
 
 	const {

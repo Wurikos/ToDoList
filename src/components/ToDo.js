@@ -70,6 +70,8 @@ const ToDo = ({
 		<Item {...override("text", "todo" + todo.id)}>
 			  
         
+			{todo.task}
+			         
 			<Link {...override("link1")} onClick={deleteTask}>
 				Удалить
 			</Link>
@@ -81,10 +83,7 @@ const ToDo = ({
 			<Link {...override("link3")} onClick={deleteTask}>
 				Выполненно
 			</Link>
-			        
-			{todo.task}
-			        
-      
+			      
 		</Item>
 		     
        
